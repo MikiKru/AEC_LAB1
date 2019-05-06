@@ -8,5 +8,12 @@ class SignalAnalysis:
         while (len(self.sinus_signal) < 1000):
             self.sinus_signal.append(sin(i/120))
             i += 1
+    def signal_plot(self, signal):
+        plt.plot(range(0,1000,1), signal)
+        plt.show()
+
+object = SignalAnalysis()
+object.signal_plot(object.signals_generator())
+
 
 
