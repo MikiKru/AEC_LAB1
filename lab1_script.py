@@ -1,5 +1,5 @@
 from math import sin
-
+import matplotlib.pyplot as plt
 
 class SignalAnalysis:
     def signals_generator(self):
@@ -8,6 +8,7 @@ class SignalAnalysis:
         while (len(self.sinus_signal) < 1000):
             self.sinus_signal.append(sin(i/120))
             i += 1
+        return self.sinus_signal
     def signal_plot(self, signal):
         plt.plot(range(0,1000,1), signal)
         plt.show()
