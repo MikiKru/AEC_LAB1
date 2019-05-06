@@ -1,2 +1,5 @@
 class SignalAnalysis:
-    pass
+    def signals_generator(self):
+        self.sinus_signal = []
+
+
