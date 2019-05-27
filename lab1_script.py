@@ -18,12 +18,23 @@ class SignalAnalysis:
     def signal_plot(self, signal):
         plt.plot(range(0,1000,1), signal)
         plt.show()
+    def addSignals(self, signal1, signal2):
+        resultSignal = []
+        i = 0
+        while (len(resultSignal) < 1000):
+            resultSignal.append(signal1[i] + signal2[i])
+            i += 1
+        return resultSignal
 
 
 object = SignalAnalysis()
 # plot first returned value
-object.signal_plot(object.signals_generator()[0])
-# plot scond returned value
-object.signal_plot(object.signals_generator()[1])
-
-
+# object.signal_plot(object.signals_generator()[0])
+# plot second returned value
+# object.signal_plot(object.signals_generator()[1])
+# adding two sinus
+sinus = object.signals_generator()[0]
+random = object.signals_generator()[1]
+object.signal_plot(object.addSignals(sinus,sinus))
+# adding sinus and random
+object.signal_plot(object.addSignals(sinus,random))
